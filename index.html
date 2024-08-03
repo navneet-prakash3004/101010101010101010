@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Gannu!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #282c34;
+            color: white;
+            font-family: 'Dancing Script', cursive;
+        }
+        .birthday-message {
+            text-align: center;
+            z-index: 1;
+        }
+        h1 {
+            font-size: 4em;
+        }
+        p {
+            font-size: 2em;
+        }
+        .particle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #FFD700;
+            border-radius: 50%;
+            animation: move 10s linear infinite;
+        }
+        @keyframes move {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(calc(100vw - 50vw));
+                opacity: 0;
+            }
+        }
+        .balloon {
+            position: absolute;
+            width: 30px;
+            height: 50px;
+            background-color: #ff69b4;
+            border-radius: 50% 50% 50% 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        .balloon:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 100%;
+            width: 2px;
+            height: 50px;
+            background-color: #ff69b4;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        .cake {
+            position: absolute;
+            width: 50px;
+            height: 70px;
+            background-color: #f4a460;
+            border-radius: 10px 10px 0 0;
+            animation: float 8s ease-in-out infinite;
+        }
+        .cake:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: -20px;
+            width: 10px;
+            height: 20px;
+            background-color: #ff6347;
+            border-radius: 10px 10px 0 0;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        .friend {
+            position: absolute;
+            width: 40px;
+            height: 80px;
+            background-color: #87ceeb;
+            border-radius: 20px;
+            animation: bounce 7s ease-in-out infinite;
+        }
+        .friend:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: -10px;
+            width: 20px;
+            height: 20px;
+            background-color: #ffd700;
+            border-radius: 50%;
+        }
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="birthday-message">
+        <h1>🎉 Happy 11th Birthday, Gannu! 🎉</h1>
+        <p>Wishing you a year filled with joy, laughter, and unforgettable adventures!</p>
+        <p>May all your dreams come true and may you continue to shine brightly, bringing happiness to everyone around you!</p>
+        <p>Let's celebrate this wonderful day with lots of fun, love, and cheer!</p>
+    </div>
+    <script>
+        for (let i = 0; i < 100; i++) {
+            let particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = `${Math.random() * 100}vw`;
+            particle.style.top = `${Math.random() * 100}vh`;
+            particle.style.animationDelay = `${Math.random() * 10}s`;
+            particle.style.animationDuration = `${5 + Math.random() * 5}s`;
+            document.body.appendChild(particle);
+        }
+
+        for (let i = 0; i < 20; i++) {
+            let balloon = document.createElement('div');
+            balloon.className = 'balloon';
+            balloon.style.left = `${Math.random() * 100}vw`;
+            balloon.style.top = `${Math.random() * 100}vh`;
+            balloon.style.animationDelay = `${Math.random() * 6}s`;
+            balloon.style.animationDuration = `${3 + Math.random() * 3}s`;
+            document.body.appendChild(balloon);
+        }
+
+        for (let i = 0; i < 10; i++) {
+            let cake = document.createElement('div');
+            cake.className = 'cake';
+            cake.style.left = `${Math.random() * 100}vw`;
+            cake.style.top = `${Math.random() * 100}vh`;
+            cake.style.animationDelay = `${Math.random() * 8}s`;
+            cake.style.animationDuration = `${4 + Math.random() * 4}s`;
+            document.body.appendChild(cake);
+        }
+
+        for (let i = 0; i < 10; i++) {
+            let friend = document.createElement('div');
+            friend.className = 'friend';
+            friend.style.left = `${Math.random() * 100}vw`;
+            friend.style.top = `${Math.random() * 100}vh`;
+            friend.style.animationDelay = `${Math.random() * 7}s`;
+            friend.style.animationDuration = `${3.5 + Math.random() * 3.5}s`;
+            document.body.appendChild(friend);
+        }
+    </script>
+</body>
+</html>
